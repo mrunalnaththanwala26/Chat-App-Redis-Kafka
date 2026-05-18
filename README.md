@@ -14,10 +14,10 @@ Single **Express** backend with a `src/` layout: `config/`, `controllers/`, `mid
 ```mermaid
 flowchart LR
   FE[React dev :5173] -->|HTTP /api proxy| BE[Backend :3000]
-  FE -. Socket.io .-> BE
+  FE -.->|Socket.io| BE
   BE --> M[(MongoDB)]
   BE --> R[(Redis)]
-  BE -. optional .-> K[Kafka]
+  BE -.->|optional| K[Kafka]
 ```
 
 Use **`VITE_SOCKET_URL=http://localhost:3000`** so the client connects to the same host/port as the API.
