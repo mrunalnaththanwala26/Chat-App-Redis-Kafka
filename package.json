@@ -1,0 +1,12 @@
+{
+  "name": "chat-app-redis-kafka",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -k -n backend,fe -c cyan,green \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "start": "npm run dev",
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
